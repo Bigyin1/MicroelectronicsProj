@@ -36,13 +36,9 @@ void GenerateSignal()
 	delay_mks(PRESTART_DELAY);
 	while (currСycles < IMPULSE_COUNT)
 	{
-		HAL_GPIO_WritePin(GPIOD,
-						  GPIO_PIN_12 | GPIO_PIN_13 | GPIO_PIN_14 | GPIO_PIN_15,
-						  GPIO_PIN_SET);
+		HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12 | GPIO_PIN_13 | GPIO_PIN_14 | GPIO_PIN_15, GPIO_PIN_SET);
 		delay_mks(THRESHOLD);
-		HAL_GPIO_WritePin(GPIOD,
-						  GPIO_PIN_12 | GPIO_PIN_13 | GPIO_PIN_14 | GPIO_PIN_15,
-						  GPIO_PIN_RESET);
+		HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12 | GPIO_PIN_13 | GPIO_PIN_14 | GPIO_PIN_15, GPIO_PIN_RESET);
 		delay_mks(HOLE);
 		++currСycles;
 	}
